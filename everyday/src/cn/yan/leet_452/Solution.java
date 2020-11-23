@@ -4,36 +4,36 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Solution {
 
     public int findMinArrowShots(int[][] points) {
-        if (points.length==0) return 0;
-//        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE, minres;
-//        for (int i = 0; i < points.length; i++) {
-//            if (points[i][0] < min) min = points[i][0];
-//            if (points[i][1] > max) max = points[i][1];
-//        }
-        Arrays.sort(points, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                if (o1[0] < o2[0]) return o1[0] - o2[0];
-                else return o1[1] - o2[1];
-            }
-        });
-        for (int i = 0; i < points.length; i++) {
-            System.out.println(points[i][0] + " " + points[i][1]);
+        if(points.length == 0){
+            return 0;
         }
-        int pos = points[0][1];
-        int ans = 1;
-        for (int[] balloon: points) {
-            System.out.println(balloon);
-            if (balloon[0] > pos) {
-                pos = balloon[1];
-                ++ans;
+        List<int[]> list = Arrays.stream(points).sorted((s1, s2) -> {
+            //按照数组的第一个数start进行升序排序
+            return s1[0] - s2[0];
+        }).collect(Collectors.toList());
+        //集合的左区间
+        int left = list.get(0)[0];
+        //集合的右区间
+        int right = list.get(0)[1];
+        //代表箭的数量
+        int num = 0;
+        for(int i = 1;i<list.size();i++){
+            if(list.get(i)[0] <= right && list.get(i)[1] >= left){
+                left = Math.max(left,list.get(i)[0]);
+                right = Math.min(right, list.get(i)[1]);
+            }else{
+                num++;
+                left = list.get(i)[0];
+                right = list.get(i)[1];
             }
         }
-        return ans;
+        return num+1;
 
 
     }
