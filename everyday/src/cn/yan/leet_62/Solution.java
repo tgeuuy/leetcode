@@ -37,7 +37,7 @@ public class Solution {
 
     @Test
     public void practice() {
-        int res = uniquePaths(10, 10);
+        int res = uniquePaths(7, 3);
         System.out.println("res=" + res);
     }
 }
