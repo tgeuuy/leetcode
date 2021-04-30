@@ -4,6 +4,9 @@ public class ListNode {
     public  int val;
     public  ListNode next;
 
+
+
+
     public  void ListNode(int val) {
         this.val = val;
     }
