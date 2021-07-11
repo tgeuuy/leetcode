@@ -4,7 +4,6 @@ import cn.structurel.TreeNode;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.Stack;
 
 public class Solution {
     public HashMap<Integer, Integer> map = new HashMap<>();
@@ -36,7 +35,10 @@ public class Solution {
         int pRoot = pl; // 在前序遍历中
         int iRoot = map.get(preorder[pRoot]);  //在中序遍历中
         TreeNode root = new TreeNode(preorder[pRoot]);
-        int size_left = iRoot - il;  //左子树的大小
+
+
+        //左子树的大小
+        int size_left = iRoot - il;
 
         root.left = myBuildTree(preorder, inorder, pRoot + 1, pRoot + size_left, il, iRoot - 1);
         root.right = myBuildTree(preorder, inorder, pRoot + size_left + 1, pr, iRoot + 1, ir);
@@ -46,7 +48,7 @@ public class Solution {
     private void preprint(TreeNode root) {
         if (root == null) return;
         else {
-            System.out.println(root.val);
+            System.out.print(root.val+" ");
             preprint(root.left);
             preprint(root.right);
 
