@@ -19,7 +19,7 @@ public class ListNode {
 
     public static void display(ListNode h) {
         while (h != null) {
-            System.out.print(h.val + "");
+            System.out.print(h.val + " ");
             h = h.next;
         }
         System.out.println();

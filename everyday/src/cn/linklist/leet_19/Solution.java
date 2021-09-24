@@ -1,15 +1,9 @@
 package cn.linklist.leet_19;
 
+import cn.structurel.ListNode;
 
 public class Solution {
-    public static class ListNode {
-        int val;
-        ListNode next;
 
-        public ListNode(int v) {
-            this.val = v;
-        }
-    }
 
 
     public static void main(String[] args) {
@@ -28,19 +22,13 @@ public class Solution {
         n5.next = null;
 
 
-        disPaly(head);
+
+        ListNode.display(head);
 
         ListNode node = removeNthFromEnd(head, 2);
-        disPaly(node);
+        ListNode.display(head);
     }
 
-    public static void disPaly(ListNode head) {
-        while (head != null) {
-            System.out.print(head.val + " ");
-            head = head.next;
-        }
-        System.out.println();
-    }
 
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
