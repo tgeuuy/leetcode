@@ -1,7 +1,37 @@
-package Link.AcWing_17;
+package cn.acwing.linklist.AcWing_17;
+
+
 
 
 public class AcWing17 {
+
+
+    public static class ListNode {
+        public int val;
+        public ListNode next;
+
+        public ListNode() {
+        }
+
+
+        public ListNode(int val) {
+            this.val = val;
+        }
+
+        public ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+
+        public static void display(ListNode h) {
+            while (h != null) {
+                System.out.print(h.val + " ");
+                h = h.next;
+            }
+            System.out.println();
+        }
+    }
+
 
 
     public static void main(String[] args) {
@@ -14,7 +44,6 @@ public class AcWing17 {
 //        for (int i = 0; i < nums.length; i++) {
 //            System.out.print(res[i] + " ");
 //        }
-
 
     }
 
