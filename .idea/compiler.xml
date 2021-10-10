@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="8">
-      <module name="leetcode" target="" />
+      <module name="JavaCode" target="" />
     </bytecodeTargetLevel>
   </component>
 </project>
