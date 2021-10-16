@@ -5,6 +5,7 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
     public TreeNode father;
+    public TreeNode next;
 
     public TreeNode() {
     }
@@ -24,4 +25,11 @@ public class TreeNode {
         this.father = father;
     }
 
+    public TreeNode(int val, TreeNode left, TreeNode right, TreeNode father, TreeNode next) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+        this.father = father;
+        this.next = next;
+    }
 }

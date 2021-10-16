@@ -21,6 +21,11 @@ public class Solution {
 
         boolean res = isSameTree(root1, root2);
         System.out.println("res=" + res);
+
+
+
+
+
     }
 
     private static boolean isSameTree(TreeNode root1, TreeNode root2) {
