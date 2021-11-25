@@ -1,10 +1,13 @@
-package cn.caeate;
+package cn.acwing.AC_33;
 
 import cn.structurel.ListNode;
 
-public class CreateLinkList {
-
-
+/**
+ * @Author tgeuuy
+ * @Date 2021/11/25 9:31
+ * @Version 1.0
+ */
+public class Main {
     public static void main(String[] args) {
         ListNode head1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
@@ -31,5 +34,29 @@ public class CreateLinkList {
             System.out.print(p.val + " ");
         }
         System.out.println();
+
+        ListNode res = findKthToTail(head1, 3);
+        System.out.println("res=" + res.val);
+    }
+
+    public static ListNode findKthToTail(ListNode pListHead, int k) {
+        if (pListHead == null) return null;
+        ListNode right = pListHead;
+        for (int i = 0; i < k; i++) {
+            if (right == null) {
+                return null;
+            } else {
+                right = right.next;
+            }
+        }
+
+        while (right != null) {
+            pListHead = pListHead.next;
+            right = right.next;
+        }
+
+        return pListHead;
+
+
     }
 }

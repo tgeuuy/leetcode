@@ -1,10 +1,13 @@
-package cn.caeate;
+package cn.acwing.AC_35;
 
 import cn.structurel.ListNode;
 
-public class CreateLinkList {
-
-
+/**
+ * @Author tgeuuy
+ * @Date 2021/11/25 10:08
+ * @Version 1.0
+ */
+public class Main {
     public static void main(String[] args) {
         ListNode head1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
@@ -31,5 +34,25 @@ public class CreateLinkList {
             System.out.print(p.val + " ");
         }
         System.out.println();
+
+        ListNode res = reverseList(head1);
+        for (ListNode p = res; p != null; p = p.next) {
+            System.out.print(p.val + " ");
+        }
+
+    }
+
+    public static ListNode reverseList(ListNode head) {
+        if (head == null) return head;
+        ListNode pre = null;
+        ListNode next = null;
+        while (head != null) {
+            next = head.next;
+            head.next = pre;
+            pre = head;
+            head = next;
+        }
+        return pre;
+
     }
 }
