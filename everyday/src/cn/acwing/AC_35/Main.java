@@ -44,8 +44,7 @@ public class Main {
 
     public static ListNode reverseList(ListNode head) {
         if (head == null) return head;
-        ListNode pre = null;
-        ListNode next = null;
+        ListNode pre = null, next = null;
         while (head != null) {
             next = head.next;
             head.next = pre;

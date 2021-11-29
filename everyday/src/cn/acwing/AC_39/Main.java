@@ -1,14 +1,16 @@
-package cn.caeate;
+package cn.acwing.AC_39;
 
 import cn.structurel.TreeNode;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class CreateTree {
-
+/**
+ * @Author tgeuuy
+ * @Date 2021/11/29 9:52
+ * @Version 1.0
+ */
+public class Main {
     public static void main(String[] args) {
 
         TreeNode root = new TreeNode(5);
@@ -17,7 +19,8 @@ public class CreateTree {
 
         TreeNode node3 = new TreeNode(2);
         TreeNode node4 = new TreeNode(4);
-        TreeNode node5 = new TreeNode(7);
+        TreeNode node5 = new TreeNode(2);
+        TreeNode node6 = new TreeNode(4);
 
         root.left = node1;
         root.right = node2;
@@ -25,8 +28,17 @@ public class CreateTree {
         node1.left = node3;
         node1.right = node4;
         node2.right = node5;
+        node2.left = node6;
 
         cenxu(root);
+
+
+        boolean res = isSymmetric(root);
+
+
+        System.out.println("res=" + res);
+
+
     }
 
     private static void cenxu(TreeNode root) {
@@ -44,5 +56,14 @@ public class CreateTree {
         System.out.println();
     }
 
+    public static boolean isSymmetric(TreeNode root) {
+        return root != null || dfs(root.left, root.right);
+
+    }
+
+    private static boolean dfs(TreeNode root1, TreeNode root2) {
+        if (root1 != null || root2 != null) return root1 != null && root2 != null;
+        return root1.val == root2.val && dfs(root1.left, root2.right) && dfs(root1.right, root2.right);
+    }
 
 }
