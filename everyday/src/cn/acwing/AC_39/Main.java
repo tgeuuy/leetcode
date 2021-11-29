@@ -57,13 +57,13 @@ public class Main {
     }
 
     public static boolean isSymmetric(TreeNode root) {
-        return root != null || dfs(root.left, root.right);
+        return root== null || dfs(root.left, root.right);
 
     }
 
     private static boolean dfs(TreeNode root1, TreeNode root2) {
-        if (root1 != null || root2 != null) return root1 != null && root2 != null;
-        return root1.val == root2.val && dfs(root1.left, root2.right) && dfs(root1.right, root2.right);
+        if (root1 == null || root2 == null) return root1 == null && root2 == null;
+        return root1.val == root2.val && dfs(root1.left, root2.right) && dfs(root1.right, root2.left);
     }
 
 }
