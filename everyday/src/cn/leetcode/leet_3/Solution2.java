@@ -24,9 +24,6 @@ public class Solution2 {
         for (int i=0,j=0; j<s.length();j++){
             char chj =s.charAt(j);
             map.put(chj,map.getOrDefault(chj,0)+1);
-//            for (Map.Entry<Character, Integer> entry : map.entrySet()) {
-//                System.out.println(entry.getKey() + "**" + entry.getValue());
-//            }
             while (map.get(chj)>1) {
                 map.put(s.charAt(i),map.get(s.charAt(i))-1);
                 i++;
