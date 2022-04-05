@@ -2,8 +2,6 @@ package cn.acwing.AC_29;
 
 import cn.structurel.ListNode;
 
-import java.util.ArrayList;
-
 /**
  * @Author tgeuuy
  * @Date 2021/11/23 9:37

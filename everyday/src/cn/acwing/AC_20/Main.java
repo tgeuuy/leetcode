@@ -1,7 +1,5 @@
 package cn.acwing.AC_20;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
 import java.util.Stack;
 
 /**

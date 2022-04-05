@@ -41,7 +41,7 @@ public class Code04_HeapSort {
                 break;
             }
             swap(arr, index, largest);
-//            index = largest;
+            index = largest;
             left = index * 2 + 1;
         }
     }

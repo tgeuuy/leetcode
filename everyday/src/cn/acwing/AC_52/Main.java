@@ -1,7 +1,5 @@
 package cn.acwing.AC_52;
 
-import java.util.*;
-
 /**
  * @Author tgeuuy
  * @Date 2021/12/9 10:12

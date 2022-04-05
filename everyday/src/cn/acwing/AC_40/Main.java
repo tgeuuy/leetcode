@@ -1,8 +1,5 @@
 package cn.acwing.AC_40;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-
 /**
  * @Author tgeuuy
  * @Date 2021/11/28 17:01

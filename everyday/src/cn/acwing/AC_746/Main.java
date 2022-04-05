@@ -12,8 +12,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-        DecimalFormat decimalFormat = new DecimalFormat("#.#");
         Scanner sc = new Scanner(System.in);
         String ch = sc.next();
         Float[][] num = new Float[12][12];
@@ -32,7 +30,7 @@ public class Main {
             }
         }
 
-        System.out.println(decimalFormat.format(ch.equals("S") ? sum : sum / c));
+        System.out.printf("%.1f", ch.equals("S") ? sum : sum / c);
 
 
     }

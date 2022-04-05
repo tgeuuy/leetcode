@@ -1,7 +1,5 @@
 package cn.acwing.AC_24;
 
-import java.util.Arrays;
-
 /**
  * @Author tgeuuy
  * @Date 2021/11/20 18:02

@@ -7,7 +7,7 @@ import cn.structurel.ListNode;
  * @Date 2021/10/28 10:03
  * @Version 1.0
  */
-public class Main {
+public class  Main {
 
 
     public static void main(String[] args) {

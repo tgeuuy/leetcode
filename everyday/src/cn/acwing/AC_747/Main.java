@@ -16,22 +16,21 @@ public class Main {
         DecimalFormat decimalFormat = new DecimalFormat("#.#");
         Scanner sc = new Scanner(System.in);
         String ch = sc.next();
-        Float[][] num = new Float[12][12];
+        double[][] num = new double[12][12];
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 12; j++) {
-                num[i][j] = sc.nextFloat();
+                num[i][j] = sc.nextDouble();
             }
         }
 
-        float sum = 0;
-        int p=11;
-        float c = 0;
-        for (int i = 1; i <= 11; i++) {
-            for (int j = 1; j <=p; j++) {
+        double sum = 0;
+
+        double c = 0;
+        for (int i = 0; i < 11; i++) {
+            for (int j = 0; j < 11 - i; j++) {
                 sum += num[i][j];
                 c++;
             }
-            p--;
         }
 
         System.out.println(decimalFormat.format(ch.equals("S") ? sum : sum / c));

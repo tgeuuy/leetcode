@@ -1,7 +1,6 @@
 package cn.acwing.AC_76;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**

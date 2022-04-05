@@ -50,9 +50,9 @@ public class Main {
                 if (node.left != null) queue.offer(node.left);
                 if (node.right != null) queue.offer(node.right);
             } else {
-
-                if (!queue.isEmpty()) queue.offer(null);
                 c++;
+                if (!queue.isEmpty()) queue.offer(null);
+
                 if (c % 2 == 1) {
                     List<Integer> level = new ArrayList<>();
                     while (!stack.isEmpty()) level.add(stack.pop());

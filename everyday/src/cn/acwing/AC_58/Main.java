@@ -12,24 +12,26 @@ public class Main {
     public static void main(String[] args) {
         int[] nums = {3, 3244, 321};
         String res = printMinNumber(nums);
-        System.out.println("res="+res);
+        System.out.println("res=" + res);
 
     }
 
     private static String printMinNumber(int[] nums) {
-        StringBuilder sb = new StringBuilder();
+
+        StringBuilder res = new StringBuilder();
         List<Integer> list = new ArrayList<>();
         for (int v : nums) list.add(v);
-        Collections.sort(list,new Comparator<Integer>() {
+
+        Collections.sort(list, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
-                String s1 = o1 + Integer.toString(o2);
-                String s2 = o2 + Integer.toString(o1);
+                String s1 = o1 + "" + o2;
+                String s2 = o2 + "" + o1;
                 return s1.compareTo(s2);
             }
         });
-        for (int v : list) sb.append(v);
-        return sb.toString();
+        for (int v : list) res.append(v);
+        return res.toString();
     }
 }
 

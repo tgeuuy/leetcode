@@ -1,6 +1,5 @@
 package cn.acwing.AC_745;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -13,26 +12,26 @@ public class Main {
     public static void main(String[] args) {
 
 
-        DecimalFormat decimalFormat = new DecimalFormat("#.#");
         Scanner sc = new Scanner(System.in);
         String ch = sc.next();
-        Float[][] num = new Float[12][12];
+        double[][] num = new double[12][12];
         for (int i = 0; i < 12; i++) {
-            for (int j = i; j < 12; j++) {
-                num[i][j] = sc.nextFloat();
+            for (int j = 0; j < 12; j++) {
+                num[i][j] = sc.nextDouble();
             }
         }
 
-        float sum = 0;
-        float c = 0;
-        for (int i = 0; i < 12; i++) {
-            for (int j = i+1; j < 12; j++) {
+        double sum = 0;
+        int c = 0;
+        for (int i = 0; i < 11; i++) {
+            for (int j = i + 1; j < 12; j++) {
                 sum += num[i][j];
                 c++;
+                //   System.out.println(i+" "+j);
             }
         }
-
-        System.out.println(decimalFormat.format(ch.equals("S") ? sum : sum / c));
+        // System.out.println(c);
+        System.out.printf("%.1f", ch.equals("S") ? sum : sum / c);
 
 
     }

@@ -1,6 +1,5 @@
 package cn.acwing.AC_822;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**

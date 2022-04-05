@@ -7,7 +7,7 @@ package cn.leetcode.leet_55;
  */
 public class Solution {
     public static void main(String[] args) {
-        int[] nums = {2, 3, 1, 1, 4};
+        int[] nums = {3, 2, 1, 0, 4};
         boolean res = canJump(nums);
         System.out.println("res=" + res);
 
@@ -16,6 +16,11 @@ public class Solution {
 
 
     public static boolean canJump(int[] nums) {
-
+        int farmost = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i <= farmost) farmost = Math.max(farmost, i + nums[i]);
+            if (farmost >= nums.length - 1) return true;
+        }
+        return false;
     }
 }
