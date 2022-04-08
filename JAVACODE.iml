@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/everyday" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/everyday/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/everyday/src/cn/zuochengyun" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

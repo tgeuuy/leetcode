@@ -28,6 +28,11 @@ public class Demo1 {
         arrayList.add(333);
         System.out.println(arrayList.toString());
 
+        String str = "aabbcc";
+        System.out.println();
+        byte[] s = str.getBytes();
+        System.out.println(s[0]);
+
 
     }
 }
