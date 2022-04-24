@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 
 public class Solution_1 {
@@ -29,30 +30,27 @@ public class Solution_1 {
 
 
     private TreeNode buildTree(int[] preorder, int[] inorder) {
-
-        int n = preorder.length;
-        for (int i = 0; i < n; i++) {
+        if (preorder.length == 0) return null;
+        for (int i = 0; i < inorder.length; i++) {
             map.put(inorder[i], i);
         }
-
-        return insert(preorder, 0, n - 1, inorder, 0, n - 1);
+        System.out.println(map.toString());
+        TreeNode root = build(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
+        return root;
     }
 
-    private TreeNode insert(int[] preorder, int pl, int pr, int[] inorder, int il, int ir) {
+    private TreeNode build(int[] preorder, int pl, int pr, int[] inorder, int il, int ir) {
         if (pl > pr) return null;
 
-        int root_p = pl;   //前序节点根节点的位置
-        int root_i = map.get(preorder[root_p]);  //中序节点根节点的位置
-        TreeNode root = new TreeNode(preorder[pl]);
-
-        int left_size = root_i - il;
-
-        root.left = insert(preorder, pl + 1, pl + left_size, inorder, il, root_i - 1);
-        root.right = insert(preorder, pl + left_size + 1, pr, inorder, root_i+1, ir);
-
-        return root;
-
-
+        int root = preorder[pl];
+//        System.out.println("root=" + root);
+        TreeNode node = new TreeNode(root);
+        int iroot_index = map.get(root);
+        System.out.println("root=" + root + "  " + "iroot_index=" + iroot_index);
+        int left_size = iroot_index - il;
+        node.left = build(preorder, pl + 1, pl + left_size, inorder, il, il + left_size);
+        node.right = build(preorder, pl + 1 + left_size, pr, inorder, iroot_index + 1, ir);
+        return node;
     }
 
 
