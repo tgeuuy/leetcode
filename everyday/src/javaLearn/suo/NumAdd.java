@@ -11,13 +11,12 @@ public class NumAdd implements Runnable {
 
     @Override
     public void run() {
-        lock.lock();
-        try {
-            for (int i = 0; i < 10000; i++) {
-                num++;
-            }
-        } finally {
+
+        for (int i = 0; i < 10; i++) {
+            lock.lock();
+            num++;
             lock.unlock();
+            System.out.println(Thread.currentThread().getName());
         }
     }
 

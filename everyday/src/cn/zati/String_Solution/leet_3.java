@@ -30,9 +30,7 @@ public class leet_3 {
                 set.add(s.charAt(back + 1));
                 back++;
             }
-
             res = Math.max(res, back - front + 1);
-
         }
         return res;
 
